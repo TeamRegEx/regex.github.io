@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{% if page.language %}{{ page.language }}{% else %}{{ site.language }}{% endif %}">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description | escape }}">
+  <meta property="og:image" content="images/3d_glasses.png">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.description | escape }}">
+  <meta property="og:url" content="http://regex.github.io{{ page.url }}">
+  <meta property="og:site_name" content="regex">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Doppio+One|Open+Sans:400italic,400,700" />
+  <link rel="stylesheet" type="text/css" href="//cdn.moot.it/1.0/moot.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" title="regex" />
+  <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  {% include analytics.html %}
+</head>
+
+<body>
+  <div id="container">
+    <header class="wrapper clearfix">
+      <h1 id="title"><a href="/">regex</a></h1>
+      {% include menu.html %}
+    </header>
+
+    <div id="main" class="wrapper clearfix">
+      {{ content }}
+    </div>
+
+    <!--footer class="wrapper">
+      {% include menu.html %}
+    </footer-->
+  </div>
+</body>
+</html>

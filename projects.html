@@ -1,0 +1,19 @@
+---
+layout: default
+title: regex | projects
+description: We're a group of developers, designers, tinkers. We want to have fun building things and learning something new.
+---
+<div id="home">
+  <h2>projects</h2>
+  <ul class="posts unstyled">
+    {% for post in site.posts %}
+      <li>
+        <div class="date">{{ post.date | date_to_string }}</div>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <q>{{ post.description }}</q>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
